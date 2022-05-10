@@ -1,0 +1,12 @@
+h1, p, ul, ol {
+  text-align: center;
+}
+
+ol, ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
+
+ol li:hover {
+  background-color: bisque;
+}
