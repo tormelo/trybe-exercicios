@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+  margin: 0px;
+}
+
+header h1, main, aside, footer {
+  margin: 2rem auto;
+  width: 70%;
+  text-align: center;
+}
+
+nav ul {
+  margin-top: 0px;
+  background-color: #fa8072;
+}
+nav ul li {
+  display: inline-block;
+  padding: 20px 0px;
+}
+nav ul li a {
+  color: #ffffff;
+  padding: 20px;
+  text-decoration: none;
+}
+nav ul li:hover {
+  background-color: #ee6262;
+}
+
+table {
+  margin: 2rem auto;
+}
+table, tr, td {
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+}
+table tr:nth-of-type(odd) {
+  background-color:#fa8072;
+}
+
+ul {
+  padding-left: 0px;
+}
+ul li{
+  list-style-type: none;
+}
+
+img {
+  width: 400px;
+}
