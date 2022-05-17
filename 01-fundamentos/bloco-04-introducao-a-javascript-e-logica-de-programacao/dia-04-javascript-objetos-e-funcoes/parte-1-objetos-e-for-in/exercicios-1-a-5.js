@@ -5,22 +5,21 @@ const info = {
 };
 
 // Exercício 1 - Imprimir boas vindas
-console.log('1.\n', `Bem-vinda, ${info.personagem}`, '\n');
+console.log(`1.\nBem-vinda, ${info.personagem}\n`);
 
 // Exercício 2 - Inserir nova propriedade e imprimir o objeto
 info.recorrente = 'Sim';
-console.log('2.\n', info, '\n');
+console.log('2.');
+console.log(info);
 
 // Exercício 3 - Mostrar todas as chaves do objeto
-console.log('3.');
-
+console.log('\n3.');
 for (const key in info) {
   console.log(key);
 }
 
 // Exercício 4 - Mostrar todos valores das chaves usando for/in
 console.log('\n4.');
-
 for (const key in info) {
   console.log(info[key]);
 }
@@ -34,7 +33,6 @@ const info2 = {
 };
 
 console.log('\n5.');
-
 for (const key in info) {
   if (
     key === 'recorrente' 
