@@ -39,3 +39,14 @@ function populateDecemberDays(daysList) {
 populateDecemberDays(dezDaysList);
 
 // Exercício 2
+function createHolidayButton(buttonName) {
+  const buttonsContainer = document.querySelector('.buttons-container');
+
+  let holidayButton = document.createElement('button');
+  holidayButton.id = 'btn-holiday'
+  holidayButton.innerText = buttonName;
+
+  buttonsContainer.appendChild(holidayButton);
+}
+
+createHolidayButton('Feriados');
