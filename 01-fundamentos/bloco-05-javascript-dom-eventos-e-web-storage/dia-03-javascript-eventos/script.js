@@ -39,23 +39,21 @@ function populateDecemberDays(daysList) {
 populateDecemberDays(dezDaysList);
 
 // Exercício 2
-function createHolidayButton(buttonName) {
-  const buttonsContainer = document.querySelector('.buttons-container');
+const buttonsContainer = document.querySelector('.buttons-container');
 
-  let holidayButton = document.createElement('button');
-  holidayButton.id = 'btn-holiday'
-  holidayButton.innerText = buttonName;
+function createButton(buttonName, buttonId) {
+  let button = document.createElement('button');
+  button.innerText = buttonName;
+  button.id = buttonId;
 
-  buttonsContainer.appendChild(holidayButton);
+  buttonsContainer.appendChild(button);
 }
 
-createHolidayButton('Feriados');
+createButton('Feriados', 'btn-holiday');
 
 // Exercício 3
 const holidayButton = document.querySelector('#btn-holiday');
-holidayButton.addEventListener('click', toggleHolidayColor);
-
-function toggleHolidayColor() {
+holidayButton.addEventListener('click', () => {
   let holidays = document.querySelectorAll('.holiday');
 
   const alternativeColor = 'rgb(100,238,100)';
@@ -66,4 +64,7 @@ function toggleHolidayColor() {
   for (const holiday of holidays) {
     holiday.style.backgroundColor = newColor;
   }
-}
+});
+
+// Exercício 4
+createButton('Sexta-feira', 'btn-friday');
