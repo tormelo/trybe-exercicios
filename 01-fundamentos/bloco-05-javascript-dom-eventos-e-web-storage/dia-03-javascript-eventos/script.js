@@ -50,3 +50,20 @@ function createHolidayButton(buttonName) {
 }
 
 createHolidayButton('Feriados');
+
+// Exercício 3
+const holidayButton = document.querySelector('#btn-holiday');
+holidayButton.addEventListener('click', toggleHolidayColor);
+
+function toggleHolidayColor() {
+  let holidays = document.querySelectorAll('.holiday');
+
+  const alternativeColor = 'rgb(100,238,100)';
+  const currentColor = holidays[0].style.backgroundColor;
+
+  const newColor = currentColor === '' ? alternativeColor : '';
+
+  for (const holiday of holidays) {
+    holiday.style.backgroundColor = newColor;
+  }
+}
