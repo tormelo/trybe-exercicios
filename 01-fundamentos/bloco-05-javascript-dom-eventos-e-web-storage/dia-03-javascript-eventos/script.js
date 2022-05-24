@@ -101,4 +101,13 @@ for (const day of days) {
   });
 }
 
+// Exercício 7
+const tasksContainer = document.querySelector('.my-tasks');
 
+function addTask(taskName) {
+  const newTask = document.createElement('span');
+  newTask.innerText = taskName;
+  tasksContainer.appendChild(newTask);
+}
+
+addTask('Estudar JavaScript');
