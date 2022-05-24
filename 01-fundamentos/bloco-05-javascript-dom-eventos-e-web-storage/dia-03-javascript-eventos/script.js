@@ -151,3 +151,30 @@ for (const day of days) {
     toggleDayTaskColor(event.target);
   })
 }
+
+//Bônus
+const appointmentsList = document.querySelector('.task-list')
+const inputBox = document.querySelector('#task-input');
+const addButton = document.querySelector('#btn-add');
+
+function addAppointment() {
+  const text = inputBox.value;
+  
+  if (text === '') {
+    return alert('O campo de texto está vazio!');
+  }
+
+  const appointment = document.createElement('li');
+  appointment.innerText = text;
+  appointmentsList.appendChild(appointment);
+}
+
+inputBox.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter'){
+    addAppointment();
+  }
+})
+
+addButton.addEventListener('click', () => {
+  addAppointment();
+})
