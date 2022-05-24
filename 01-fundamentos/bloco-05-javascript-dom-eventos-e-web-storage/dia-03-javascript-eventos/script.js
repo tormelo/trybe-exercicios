@@ -125,31 +125,25 @@ addTaskLabel('green');
 // Exercício 9
 const myTask = document.querySelector('.task');
 
-function toggleTaskSelection(task) {
-  const taskClass = task.className;
-  task.className = taskClass === 'task' ? 'task selected' : 'task';  
-}
-
 myTask.addEventListener('click', (event) => {
-  toggleTaskSelection(event.target);
-})
+  const task = event.target;
+  const taskClass = task.className;
+  task.className = taskClass === 'task' ? 'task selected' : 'task';
+});
 
 // Exercício 10
-function toggleDayTaskColor(day) {
-  if (myTask.className !== 'task selected'){
-    return;
-  }
-
-  const taskColor = myTask.style.backgroundColor;
-  const dayColor = day.style.color;
-
-  day.style.color = taskColor === dayColor ? '' : taskColor;
-}
-
 for (const day of days) {
   day.addEventListener('click', (event) => {
-    toggleDayTaskColor(event.target);
-  })
+    if (myTask.className !== 'task selected'){
+      return;
+    }
+
+    const element = event.target;
+    const taskColor = myTask.style.backgroundColor;
+    const dayColor = element.style.color;
+
+    element.style.color = taskColor === dayColor ? '' : taskColor;
+  });
 }
 
 //Bônus
@@ -170,11 +164,9 @@ function addAppointment() {
 }
 
 inputBox.addEventListener('keyup', (event) => {
-  if (event.key === 'Enter'){
+  if (event.key === 'Enter') {
     addAppointment();
   }
-})
+});
 
-addButton.addEventListener('click', () => {
-  addAppointment();
-})
+addButton.addEventListener('click', addAppointment);
