@@ -1,6 +1,6 @@
 function createDaysOfTheWeek() {
-  const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
   const weekDaysList = document.querySelector('.week-days');
+  const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
 
   for (let index = 0; index < weekDays.length; index += 1) {
     const days = weekDays[index];
@@ -20,7 +20,7 @@ function populateDecemberDays(daysList) {
   const daysParent = document.querySelector('#days');
 
   for (const day of daysList) {
-    let dayElement = document.createElement('li');
+    const dayElement = document.createElement('li');
     dayElement.className = 'day';
     dayElement.innerText = day;
 
@@ -42,7 +42,7 @@ populateDecemberDays(dezDaysList);
 const buttonsContainer = document.querySelector('.buttons-container');
 
 function createButton(buttonName, buttonId) {
-  let button = document.createElement('button');
+  const button = document.createElement('button');
   button.innerText = buttonName;
   button.id = buttonId;
 
@@ -53,12 +53,11 @@ createButton('Feriados', 'btn-holiday');
 
 // Exercício 3
 const holidayButton = document.querySelector('#btn-holiday');
-holidayButton.addEventListener('click', () => {
-  let holidays = document.querySelectorAll('.holiday');
 
+holidayButton.addEventListener('click', () => {
+  const holidays = document.querySelectorAll('.holiday');
   const alternativeColor = 'rgb(100, 238, 100)';
   const currentColor = holidays[0].style.backgroundColor;
-
   const newColor = currentColor !== alternativeColor ? alternativeColor : '';
 
   for (const holiday of holidays) {
@@ -71,17 +70,35 @@ createButton('Sexta-feira', 'btn-friday');
 
 // Exercício 5
 const fridayButton = document.querySelector('#btn-friday');
-fridayButton.addEventListener('click', () => {
-  let fridays = document.querySelectorAll('.friday');
 
-  const fridayList = [4, 11, 18, 25];
+fridayButton.addEventListener('click', () => {
+  const fridays = document.querySelectorAll('.friday');
+  const decFridays = [4, 11, 18, 25];
   let altList = ['SEXTOU!', 'SEXTOU!', 'SEXTOU!', 'SEXTOU!'];
 
   if (fridays[0].innerText === altList[0]){
-    altList = fridayList;
+    altList = decFridays;
   }
 
   for (let i = 0; i < fridays.length; i += 1) {
     fridays[i].innerText = altList[i];
   }
 });
+
+// Exercício 6
+const days = document.querySelectorAll('.day');
+
+function setFontSize(element, size) {
+  element.style.fontSize = size;
+}
+
+for (const day of days) {
+  day.addEventListener('mouseover', (event) => {
+    setFontSize(event.target, '30px');
+  });
+  day.addEventListener('mouseout', (event) => {
+    setFontSize(event.target, '20px');
+  });
+}
+
+
