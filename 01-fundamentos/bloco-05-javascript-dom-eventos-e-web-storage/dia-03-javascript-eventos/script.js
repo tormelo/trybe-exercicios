@@ -133,3 +133,21 @@ function toggleTaskSelection(task) {
 myTask.addEventListener('click', (event) => {
   toggleTaskSelection(event.target);
 })
+
+// Exercício 10
+function toggleDayTaskColor(day) {
+  if (myTask.className !== 'task selected'){
+    return;
+  }
+
+  const taskColor = myTask.style.backgroundColor;
+  const dayColor = day.style.color;
+
+  day.style.color = taskColor === dayColor ? '' : taskColor;
+}
+
+for (const day of days) {
+  day.addEventListener('click', (event) => {
+    toggleDayTaskColor(event.target);
+  })
+}
