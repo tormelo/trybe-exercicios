@@ -121,3 +121,15 @@ function addTaskLabel(color) {
 }
 
 addTaskLabel('green');
+
+// Exercício 9
+const myTask = document.querySelector('.task');
+
+function toggleTaskSelection(task) {
+  const taskClass = task.className;
+  task.className = taskClass === 'task' ? 'task selected' : 'task';  
+}
+
+myTask.addEventListener('click', (event) => {
+  toggleTaskSelection(event.target);
+})
