@@ -111,3 +111,13 @@ function addTask(taskName) {
 }
 
 addTask('Estudar JavaScript');
+
+// Exercício 8
+function addTaskLabel(color) {
+  const label = document.createElement('div');
+  label.className = 'task';
+  label.style.backgroundColor = color;
+  tasksContainer.appendChild(label);
+}
+
+addTaskLabel('green');
