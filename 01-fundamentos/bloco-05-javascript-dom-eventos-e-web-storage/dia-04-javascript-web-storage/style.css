@@ -1,0 +1,31 @@
+body {
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  margin: 0 10px;
+}
+
+#content {
+  text-align: center;
+}
+
+#options {
+  font-size: 18px;
+}
+
+#bkg-color, 
+#font-color {
+  width: 30px;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input {
+  vertical-align: middle;
+}
