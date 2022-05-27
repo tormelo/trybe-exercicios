@@ -56,3 +56,21 @@ fontFamilySelect.firstChild.selected = true;
 fontFamilySelect.addEventListener('change', () => {
   document.body.style.fontFamily = fontFamilySelect.value;
 });
+
+// Add text alignment options
+const alignments = ['Center', 'Left', 'Right', 'Justify'];
+const aligmentSelect = document.querySelector('#text-align');
+
+for (const alignment of alignments) {
+  const option = document.createElement('option');
+  option.innerText = alignment;
+  option.value = alignment.toLowerCase();
+  aligmentSelect.appendChild(option);
+}
+
+aligmentSelect.firstChild.selected = true;
+
+aligmentSelect.addEventListener('change', () => {
+  const content = document.querySelector('#content');
+  content.style.textAlign = aligmentSelect.value;
+});
