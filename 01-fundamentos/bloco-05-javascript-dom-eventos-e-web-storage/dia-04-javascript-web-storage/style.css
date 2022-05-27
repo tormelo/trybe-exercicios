@@ -7,8 +7,12 @@ main {
   margin: 0 10px;
 }
 
-.content {
+#content {
   text-align: center;
+}
+
+#options {
+  font-size: 18px;
 }
 
 #bkg-color, 
