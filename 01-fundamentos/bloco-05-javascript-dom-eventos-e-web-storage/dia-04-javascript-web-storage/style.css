@@ -1,19 +1,19 @@
 body {
   max-width: 800px;
   margin: auto;
-  font-family: Arial, sans-serif;
 }
 
 main {
   margin: 0 10px;
 }
 
-#content {
-  text-align: center;
+#settings {
+  font-size: 16px;
 }
 
-#options {
-  font-size: 18px;
+#font-family, 
+#text-align {
+  font-size: medium;
 }
 
 #bkg-color, 
@@ -21,9 +21,19 @@ main {
   width: 30px;
 }
 
+select {
+  margin: 10px 0 0;
+  width: max-content;
+}
+
 label {
   display: block;
   margin: 10px 0;
+  width: max-content;
+}
+
+button {
+  margin: 20px 0;
 }
 
 input {

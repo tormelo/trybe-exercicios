@@ -8,6 +8,15 @@
 </head>
 <body>
   <main>
+    <section id="settings">
+      <select id="font-family"></select>
+      <select id="text-align"></select>
+      <label><input type="range" id="font-size"> Font Size</label>
+      <label><input type="range" id="line-height"> Line Height</label>
+      <label><input type="color" id="font-color"> Font Color</label>
+      <label><input type="color" id="bkg-color"> Background Color</label>
+      <button id="reset-btn">Reset settings</button>
+    </section>
     <article id="content">
       <h1>Lorem Ipsum</h1>
       <p>
@@ -17,16 +26,6 @@
         Vestibulum tincidunt nunc dui, in sodales nunc varius eget. Donec sagittis facilisis risus, non accumsan ex hendrerit nec. Donec volutpat augue sem, in consequat massa mollis eu. In ac orci ligula. Duis ultrices venenatis quam eget vehicula. Suspendisse mollis sem a finibus faucibus. Morbi turpis odio, tempor eu luctus quis, consequat non sapien.
       </p>
     </article>
-    <hr>
-    <section id="options">
-      <h2>Options</h2>
-      <label><select id="font-family"></select> Font</label>
-      <label><select id="text-align"></select> Alignment</label>
-      <label><input type="color" id="font-color"> Font Color</label>
-      <label><input type="color" id="bkg-color"> Background Color</label>
-      <label><input type="range" id="font-size"> Font Size</label>
-      <label><input type="range" id="line-height"> Line Height</label>
-    </section>
   </main>
   <script src="script.js"></script>
 </body>
