@@ -15,11 +15,11 @@
   <form action="" method="GET" class="container">
     <div class="input-container">
       <label for="input-name">Nome</label>
-      <input type="text" name="nome" id="input-name" placeholder="Digite seu nome completo..." minlength="10" maxlength="40">
+      <input type="text" name="nome" id="input-name" placeholder="Digite seu nome completo..." minlength="10" maxlength="40" required>
     </div>
     <div class="input-container">
       <label for="input-email">E-mail</label>
-      <input type="email" name="email" id="input-email" placeholder="Digite seu email..." minlength="10" maxlength="50">
+      <input type="email" name="email" id="input-email" placeholder="Digite seu email..." minlength="10" maxlength="50" required>
     </div>
 
     <fieldset>
@@ -40,12 +40,12 @@
 
     <div class="input-container">
       <label for="input-answer">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
-      <textarea name="resposta" id="input-answer" placeholder="Digite sua resposta..." rows="10" maxlength="500"></textarea>
+      <textarea name="resposta" id="input-answer" placeholder="Digite sua resposta..." rows="10" maxlength="500" required></textarea>
     </div>
 
     <div class="input-container">
       <label for="input-date">Data da viagem</label>
-      <input type="date" name="data" id="input-date">
+      <input type="date" name="data" id="input-date" required>
     </div>
 
     <div class="input-container">
@@ -54,12 +54,14 @@
     </div>
 
     <div class="input-container">
-      <input type="checkbox" name="direitos" id="check-rights">
-      <label for="check-rights">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+      <input type="checkbox" name="acordo" id="agreement" required>
+      <label for="agreement">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
     </div>
 
-    <button id="submit-button" type="submit">Enviar</button>
-    <button id="reset-button" type="reset">Limpar</button>
+    <div id="buttons">
+      <button id="submit-button" type="submit">Enviar</button>
+      <button id="reset-button" type="reset">Limpar</button>
+    </div>
   </form>
   <script src="script.js"></script>
 </body>

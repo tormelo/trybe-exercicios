@@ -45,3 +45,14 @@ textarea {
   resize: none;
   width: 100%;
 }
+
+#buttons {
+  margin-top: 40px;
+  text-align: center;
+}
+
+button {
+  font-size: large;
+  margin: 5px 0;
+  padding: 5px 20px;
+}
