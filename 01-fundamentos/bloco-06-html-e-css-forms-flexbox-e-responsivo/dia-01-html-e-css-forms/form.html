@@ -15,17 +15,17 @@
   <form action="" method="GET" class="container">
     <div class="input-container">
       <label for="input-name">Nome</label>
-      <input type="text" name="nome" id="input-name" minlength="10" maxlength="40">
+      <input type="text" name="nome" id="input-name" placeholder="Digite seu nome completo..." minlength="10" maxlength="40">
     </div>
     <div class="input-container">
       <label for="input-email">E-mail</label>
-      <input type="email" name="email" id="input-email" minlength="10" maxlength="50">
+      <input type="email" name="email" id="input-email" placeholder="Digite seu email..." minlength="10" maxlength="50">
     </div>
 
     <fieldset>
       <legend>Selecione seu destino favorito</legend>
       <label for="radio-cidade"> 
-        <input type="radio" name="destino" id="radio-cidade" value="cidade"> Cidade
+        <input type="radio" name="destino" id="radio-cidade" value="cidade" checked> Cidade
       </label>
       <label for="radio-campo"> 
         <input type="radio" name="destino" id="radio-campo" value="campo"> Campo
@@ -44,7 +44,7 @@
     </div>
 
     <div class="input-container">
-      <label for="input-date">Data</label>
+      <label for="input-date">Data da viagem</label>
       <input type="date" name="data" id="input-date">
     </div>
 
@@ -59,6 +59,7 @@
     </div>
 
     <button id="submit-button" type="submit">Enviar</button>
+    <button id="reset-button" type="reset">Limpar</button>
   </form>
   <script src="script.js"></script>
 </body>
