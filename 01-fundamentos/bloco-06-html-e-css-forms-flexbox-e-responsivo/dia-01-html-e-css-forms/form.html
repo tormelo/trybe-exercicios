@@ -7,6 +7,59 @@
   <title>TrybeTrip</title>
 </head>
 <body>
+  <header class="container">
+    <h1>Formulário TrybeTrip</h1>
+    <p>Prencha as informações para concorrer a uma viagem na faixa!</p>
+  </header>
+
+  <form action="" method="GET" class="container">
+    <div class="input-container">
+      <label for="input-name">Nome</label>
+      <input type="text" name="nome" id="input-name" minlength="10" maxlength="40">
+    </div>
+    <div class="input-container">
+      <label for="input-email">E-mail</label>
+      <input type="email" name="email" id="input-email" minlength="10" maxlength="50">
+    </div>
+
+    <fieldset>
+      <legend>Selecione seu destino favorito</legend>
+      <label for="radio-cidade"> 
+        <input type="radio" name="destino" id="radio-cidade" value="cidade"> Cidade
+      </label>
+      <label for="radio-campo"> 
+        <input type="radio" name="destino" id="radio-campo" value="campo"> Campo
+      </label>
+      <label for="radio-praia"> 
+        <input type="radio" name="destino" id="radio-praia" value="praia"> Praia
+      </label>
+      <label for="radio-montanhas"> 
+        <input type="radio" name="destino" id="radio-montanhas" value="montanhas"> Montanhas
+      </label>
+    </fieldset>
+
+    <div class="input-container">
+      <label for="input-answer">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
+      <textarea name="resposta" id="input-answer" placeholder="Digite sua resposta..." rows="10" maxlength="500"></textarea>
+    </div>
+
+    <div class="input-container">
+      <label for="input-date">Data</label>
+      <input type="date" name="data" id="input-date">
+    </div>
+
+    <div class="input-container">
+      <input type="checkbox" name="noticias" id="check-news">
+      <label for="check-news">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+    </div>
+
+    <div class="input-container">
+      <input type="checkbox" name="direitos" id="check-rights">
+      <label for="check-rights">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+    </div>
+    
+    <button type="submit">Enviar</button>
+  </form>
   <script src="script.js"></script>
 </body>
 </html>
