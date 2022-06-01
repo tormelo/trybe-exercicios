@@ -6,62 +6,65 @@
   <title>TrybeTrip</title>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Formulário TrybeTrip</h1>
-    <p>Prencha as informações para concorrer a uma viagem na faixa!</p>
+  <header class="text-center">
+    <h1 class="display-3">Formulário TrybeTrip</h1>
+    <p class="lead">Prencha as informações para concorrer a uma viagem na faixa!</p>
   </header>
 
   <form action="" method="GET">
-    <div>
-      <label for="input-name">Nome</label>
-      <input type="text" name="nome" id="input-name" placeholder="Digite seu nome completo..." minlength="10" maxlength="40" required>
+    <div class="container">
+      <label class="form-label" for="input-name">Nome</label>
+      <input class="form-control" type="text" name="nome" id="input-name" placeholder="Digite seu nome completo..." minlength="10" maxlength="40" required>
     </div>
-    <div>
-      <label for="input-email">E-mail</label>
-      <input type="email" name="email" id="input-email" placeholder="Digite seu email..." minlength="10" maxlength="50" required>
+    <div class="container">
+      <label class="form-label" for="input-email">E-mail</label>
+      <input class="form-control" type="email" name="email" id="input-email" placeholder="Digite seu email..." minlength="10" maxlength="50" required>
     </div>
 
-    <fieldset>
-      <legend>Selecione seu destino favorito</legend>
-      <label for="radio-cidade"> 
-        <input type="radio" name="destino" id="radio-cidade" value="cidade" checked> Cidade
+    <div class="container">
+      <p class="form-label">Selecione seu destino favorito</p>
+      <label class="form-check" for="radio-cidade"> 
+        <input class="form-check-input" type="radio" name="destino" id="radio-cidade" value="cidade" checked> Cidade
       </label>
-      <label for="radio-campo"> 
-        <input type="radio" name="destino" id="radio-campo" value="campo"> Campo
+      <label class="form-check" for="radio-campo"> 
+        <input class="form-check-input" type="radio" name="destino" id="radio-campo" value="campo"> Campo
       </label>
-      <label for="radio-praia"> 
-        <input type="radio" name="destino" id="radio-praia" value="praia"> Praia
+      <label class="form-check" for="radio-praia"> 
+        <input class="form-check-input" type="radio" name="destino" id="radio-praia" value="praia"> Praia
       </label>
-      <label for="radio-montanhas"> 
-        <input type="radio" name="destino" id="radio-montanhas" value="montanhas"> Montanhas
+      <label class="form-check" for="radio-montanhas"> 
+        <input class="form-check-input" type="radio" name="destino" id="radio-montanhas" value="montanhas"> Montanhas
       </label>
-    </fieldset>
-
-    <div>
-      <label for="input-answer">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
-      <textarea name="resposta" id="input-answer" placeholder="Digite sua resposta..." rows="10" maxlength="500" required></textarea>
     </div>
 
-    <div>
-      <label for="input-date">Data da viagem</label>
-      <input type="date" name="data" id="input-date" required>
+    <div class="container">
+      <label class="form-label" for="input-answer">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
+      <textarea class="form-control" name="resposta" id="input-answer" placeholder="Digite sua resposta..." rows="10" maxlength="500" required></textarea>
     </div>
 
-    <div>
-      <input type="checkbox" name="noticias" id="check-news">
-      <label for="check-news">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+    <div class="container">
+      <label class="form-label" for="input-date">Data da viagem</label>
+      <input class="form-control" type="date" name="data" id="input-date" required>
     </div>
 
-    <div>
-      <input type="checkbox" name="acordo" id="agreement" required>
-      <label for="agreement">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+    <div class="container">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="noticias" id="check-news">
+        <label class="form-check-label" for="check-news">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?</label>
+      </div>
+  
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="acordo" id="agreement" required>
+        <label class="form-check-label" for="agreement">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+      </div>
     </div>
 
-    <div>
-      <button id="submit-button" type="submit">Enviar</button>
-      <button id="reset-button" type="reset">Limpar</button>
+    <div class="container text-center">
+      <button class="btn btn-success my-1" id="submit-button" type="submit">Enviar</button>
+      <button class="btn btn-warning my-1" id="reset-button" type="reset">Limpar</button>
     </div>
   </form>
   <script src="script.js"></script>
