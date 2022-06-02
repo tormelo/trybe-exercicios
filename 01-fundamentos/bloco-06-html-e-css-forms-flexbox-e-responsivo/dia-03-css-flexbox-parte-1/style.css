@@ -33,3 +33,9 @@ header h3 {
   color: grey;
   text-decoration: underline;
 }
+
+#intro-section {
+  display: flex;
+  justify-content: center;
+  margin: 10px 20px;
+}
