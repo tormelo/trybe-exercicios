@@ -67,3 +67,8 @@ header h3 {
 hr {
   margin: 10px auto;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+}
