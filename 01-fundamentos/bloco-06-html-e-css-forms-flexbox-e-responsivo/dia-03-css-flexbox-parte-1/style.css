@@ -9,7 +9,8 @@
   width: 70px;
 }
 
-.gallery-img {
+.gallery-img, 
+hr {
   width: 150px;
 }
 
@@ -38,4 +39,31 @@ header h3 {
   display: flex;
   justify-content: center;
   margin: 10px 20px;
+}
+
+#techs-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+
+}
+
+.tech-item {
+  background-color: #e2e2e2;
+  border-radius: 15px;
+  box-shadow: 2px 2px #cfcfcf;
+  margin: 5px;
+  padding: 10px;
+}
+
+.tech-item h4 {
+  color: #383838;
+  padding: 10px 0;
+  text-align: center;
+}
+
+hr {
+  margin: 10px auto;
 }
