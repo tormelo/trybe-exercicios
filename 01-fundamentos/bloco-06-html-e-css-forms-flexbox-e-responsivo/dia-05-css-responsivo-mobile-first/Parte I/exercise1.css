@@ -12,6 +12,7 @@
 
 body {
   font-size: 20px;
+  margin: 0 30px;
 }
 
 article {
@@ -19,7 +20,7 @@ article {
 }
 
 h1 {
-
+  font-size: 1.6em;
 }
 
 h2 {
@@ -39,7 +40,7 @@ section {
 }
 
 figure {
-	margin: 0;
+	margin: 1em 0;
 }
 
 figcaption {
