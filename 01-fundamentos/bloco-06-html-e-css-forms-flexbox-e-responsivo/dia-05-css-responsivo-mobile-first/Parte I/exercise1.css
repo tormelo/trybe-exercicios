@@ -23,8 +23,8 @@ h1 {
   font-size: 1.6em;
 }
 
-h2 {
-
+h1, h2 {
+  text-align: center;
 }
 
 img {
@@ -36,7 +36,9 @@ main {
 }
 
 section {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 figure {
@@ -45,4 +47,21 @@ figure {
 
 figcaption {
   font-size: .8em;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    background-color: rgb(204, 204, 204);
+    font-size: 18px;
+  }
+
+  section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  figure {
+    max-width: 45%;
+  }
 }
