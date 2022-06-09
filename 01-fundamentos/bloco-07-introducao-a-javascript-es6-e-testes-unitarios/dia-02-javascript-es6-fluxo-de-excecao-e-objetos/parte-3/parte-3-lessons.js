@@ -47,3 +47,13 @@ listValues(lesson1);
 // 5
 const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
 console.log(allLessons);
+
+// 6
+function getTotalStudents(object) {
+  let totalStudents = 0;
+  for (const key in object) {
+    totalStudents += object[key].numeroEstudantes;
+  }
+  return totalStudents;
+}
+console.log(`Existem ${getTotalStudents(allLessons)} estudantes ao todo.`);
