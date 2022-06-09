@@ -25,3 +25,11 @@ function addProperty(object, key, value) {
 
 addProperty(lesson2, 'turno', 'noite');
 console.log(lesson2);
+
+// 2
+function listKeys(object) {
+  console.log(Object.keys(object));
+}
+listKeys(lesson1);
+
+// 3
