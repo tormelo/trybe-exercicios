@@ -44,7 +44,7 @@ const listValues = (object) => {
 listValues(lesson1);
 
 // 5
-const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
+const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
 console.log(allLessons);
 
 // 6
@@ -64,7 +64,7 @@ console.log(getValueByIndex(lesson1, 0));
 // 8
 const isValidPair = (object, key, value) => {
   const entries = Object.entries(object);
-  for (let index in entries) {
+  for (const index in entries) {
     if (entries[index][0] === key && entries[index][1] === value) {
       return true;
     }
@@ -73,3 +73,16 @@ const isValidPair = (object, key, value) => {
 };
 console.log(isValidPair(lesson3, 'turno', 'noite'));
 console.log(isValidPair(lesson3, 'materia', 'Maria Clara'));
+
+// Bonus 1
+const getSubjectStudents = (object, subject) => {
+  const values = Object.values(object);
+  let totalStudents = 0;
+  for (const index in values) {
+    if (values[index].materia === subject) {
+      totalStudents += values[index].numeroEstudantes;
+    }
+  }
+  return totalStudents;
+}
+console.log(`Existem ${getSubjectStudents(allLessons, 'Matemática')} estudantes de matemática.`);
