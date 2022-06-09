@@ -86,3 +86,22 @@ const getSubjectStudents = (object, subject) => {
   return totalStudents;
 }
 console.log(`Existem ${getSubjectStudents(allLessons, 'Matemática')} estudantes de matemática.`);
+
+// Bonus 2
+const createReport = (object, teacher) => {
+  const values = Object.values(object);
+  let subjects = [];
+  let students = 0;
+  for (const index in values) {
+    if (values[index].professor === teacher) {
+      subjects.push(values[index].materia);
+      students += values[index].numeroEstudantes;
+    }
+  }
+  return {
+    professor: teacher,
+    aulas: subjects,
+    estudantes: students
+  };
+};
+console.log(createReport(allLessons, 'Maria Clara'));
