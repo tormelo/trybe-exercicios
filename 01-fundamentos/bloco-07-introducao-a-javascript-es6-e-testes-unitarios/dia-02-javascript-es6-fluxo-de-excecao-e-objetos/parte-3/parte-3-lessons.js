@@ -57,3 +57,10 @@ function getTotalStudents(object) {
   return totalStudents;
 }
 console.log(`Existem ${getTotalStudents(allLessons)} estudantes ao todo.`);
+
+// 7
+function getValueByIndex(object, index) {
+  const keys = Object.keys(object);
+  return object[keys[index]];
+}
+console.log(getValueByIndex(lesson1, 0));
