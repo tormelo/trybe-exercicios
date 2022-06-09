@@ -19,27 +19,26 @@ const lesson3 = {
 };
 
 // 1
-function addProperty(object, key, value) {
+const addProperty = (object, key, value) => {
   object[key] = value;
-}
-
+};
 addProperty(lesson2, 'turno', 'noite');
 console.log(lesson2);
 
 // 2
-function listKeys(object) {
+const listKeys = (object) => {
   console.log(Object.keys(object));
 }
 listKeys(lesson1);
 
 // 3
-function getObjectSize(object) {
+const getObjectSize = (object) => {
   console.log(Object.keys(object).length);
 }
 getObjectSize(lesson1);
 
 // 4
-function listValues(object) {
+const listValues = (object) => {
   console.log(Object.values(object));
 }
 listValues(lesson1);
@@ -49,7 +48,7 @@ const allLessons = Object.assign({}, {lesson1, lesson2, lesson3});
 console.log(allLessons);
 
 // 6
-function getTotalStudents(object) {
+const getTotalStudents = (object) => {
   let totalStudents = 0;
   for (const key in object) {
     totalStudents += object[key].numeroEstudantes;
@@ -59,8 +58,18 @@ function getTotalStudents(object) {
 console.log(`Existem ${getTotalStudents(allLessons)} estudantes ao todo.`);
 
 // 7
-function getValueByIndex(object, index) {
-  const keys = Object.keys(object);
-  return object[keys[index]];
-}
+const getValueByIndex = (object, index) => Object.values(object)[index];
 console.log(getValueByIndex(lesson1, 0));
+
+// 8
+const isValidPair = (object, key, value) => {
+  const entries = Object.entries(object);
+  for (let index in entries) {
+    if (entries[index][0] === key && entries[index][1] === value) {
+      return true;
+    }
+  }
+  return false;
+};
+console.log(isValidPair(lesson3, 'turno', 'noite'));
+console.log(isValidPair(lesson3, 'materia', 'Maria Clara'));
