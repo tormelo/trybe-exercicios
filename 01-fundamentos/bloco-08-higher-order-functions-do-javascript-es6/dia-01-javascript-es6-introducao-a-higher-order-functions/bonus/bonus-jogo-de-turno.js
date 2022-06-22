@@ -24,7 +24,7 @@ const dragonDamage = () => {
   const min = 15;
   const max = dragon.strength;
   return min + Math.round((Math.random() * (max - min)));
-} 
+}
 
 const warriorDamage = () => {
   const min = warrior.strength;
@@ -38,7 +38,7 @@ const mageDamage = () => {
   let dmg = min + Math.round((Math.random() * (max - min)));
   let manaCost = 15;
 
-  if (mage.mana < 15){
+  if (mage.mana < 15) {
     dmg = 'Não possui mana suficiente';
     manaCost = 0;
   }
@@ -53,3 +53,11 @@ const mageDamage = () => {
 for (let i = 0; i < 100; i += 1) {
   console.log(mageDamage());
 }
+
+const gameActions = {
+  warriorTurn: (callback) => {
+    const damage = callback();
+    dragon.healthPoints -= damage;
+    warrior.damage = damage;
+  },
+};
