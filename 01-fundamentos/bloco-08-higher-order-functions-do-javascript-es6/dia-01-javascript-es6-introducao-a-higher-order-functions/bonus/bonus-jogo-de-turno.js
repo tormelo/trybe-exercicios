@@ -55,9 +55,15 @@ for (let i = 0; i < 100; i += 1) {
 }
 
 const gameActions = {
-  warriorTurn: (callback) => {
-    const damage = callback();
-    dragon.healthPoints -= damage;
-    warrior.damage = damage;
+  warriorTurn: (damageCalc) => {
+    const warriorDamage = damageCalc();
+    dragon.healthPoints -= warriorDamage;
+    warrior.damage = warriorDamage;
   },
+  mageTurn: (damageCalc) => {
+    const mageAction = damageCalc();
+    dragon.healthPoints -= mageAction.damage;
+    mage.damage = mageAction.damage;
+    mage.mana -= mageAction.cost;
+  }
 };
