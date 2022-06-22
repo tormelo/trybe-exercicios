@@ -32,8 +32,24 @@ const warriorDamage = () => {
   return min + Math.round((Math.random() * (max - min)));
 }
 
+const mageDamage = () => {
+  const min = mage.intelligence;
+  const max = mage.intelligence * 2;
+  let dmg = min + Math.round((Math.random() * (max - min)));
+  let manaCost = 15;
+
+  if (mage.mana < 15){
+    dmg = 'Não possui mana suficiente';
+    manaCost = 0;
+  }
+
+  return {
+    damage: dmg,
+    cost: manaCost,
+  }
+}
 
 
 for (let i = 0; i < 100; i += 1) {
-  console.log(warriorDamage());
+  console.log(mageDamage());
 }
