@@ -63,8 +63,8 @@ const books = [
 
 const getFictionOrFantasyBooks = () => (
   books.filter((book) => (
-    book.genre === 'Fantasia' || book.genre === 'Ficção Científica')
-  )
+    book.genre === 'Fantasia' || book.genre === 'Ficção Científica'
+  ))
 );
 
 console.log(getFictionOrFantasyBooks());

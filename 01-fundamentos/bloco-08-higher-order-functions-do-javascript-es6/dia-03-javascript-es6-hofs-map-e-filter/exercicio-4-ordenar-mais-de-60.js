@@ -61,10 +61,12 @@ const books = [
   },
 ];
 
-const formatedBookNames = () => (
-  books.map((book) => (
-    `${book.name} - ${book.genre} - ${book.author.name}`
-  ))
+const getOldBooksOrdered = () => (
+  books
+    .filter((book) => (
+      new Date().getFullYear() - book.releaseYear > 60
+    ))
+    .sort((a, b) => a.releaseYear - b.releaseYear)
 );
 
-console.log(formatedBookNames());
+console.log(getOldBooksOrdered());
