@@ -61,8 +61,8 @@ const books = [
   },
 ];
 
-const longestTitledBook = (array) => (
-  array.reduce((prevBook, currBook) => (
+const longestTitledBook = (books) => (
+  books.reduce((prevBook, currBook) => (
     prevBook.name.length > currBook.name.length ? prevBook : currBook
   ))
 );

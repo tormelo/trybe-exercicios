@@ -61,8 +61,8 @@ const books = [
   },
 ];
 
-const reduceNames = (array) => (
-  array.reduce((result, book) => (
+const reduceNames = (books) => (
+  books.reduce((result, book) => (
     result === '' ? `${book.author.name}` : `${result}, ${book.author.name}`
   ), '') + '.'
 );

@@ -61,10 +61,10 @@ const books = [
   },
 ];
 
-const averageAge = (array) => (
-  array.reduce((sum, book) => (
+const averageAge = (books) => (
+  books.reduce((sum, book) => (
     sum + (book.releaseYear - book.author.birthYear)
-  ), 0) / array.length
+  ), 0) / books.length
 );
 
 console.log(averageAge(books));
