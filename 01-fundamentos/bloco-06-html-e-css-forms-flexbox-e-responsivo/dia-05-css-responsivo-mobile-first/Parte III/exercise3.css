@@ -1,16 +1,14 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-}
-
-#content-container {
-  display: flex;
-  justify-content: space-around;
+  box-sizing: border-box;
 }
 
 #container {
-  margin: 0 auto;
-  width: 100%;
-  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 #header {
@@ -23,22 +21,19 @@ body {
 }
 
 #navigation {
-  width: 100%;
   background: #333;
 }
 
 #navigation ul {
   display: flex;
-  margin: 0;
-  padding: 0;
 }
 
 #navigation ul li {
   list-style-type: none;
-  display: flex;
 }
 
 #navigation li a {
+  display: block;
   padding: 5px 10px;
   color: #fff;
   text-decoration: none;
@@ -50,27 +45,32 @@ body {
 }
 
 #content-container {
-  width: 100%;
-  background: #FFF;
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
 }
 
 #content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   width: 60%;
   padding: 20px 0;
   margin: 0 0 0 4%;
 }
 
-#content h2 {
-  margin: 0;
+#content h2,
+#content img,
+#content p {
+  margin-bottom: 1rem;
+}
+
+#content img {
+  width: 400px;
 }
 
 #aside {
   padding: 20px 0;
   margin: 0 3% 0 0;
-
 }
 
 #aside h3 {
@@ -85,12 +85,25 @@ body {
 }
 
 @media print {
-  #header, #navigation, #footer {
+
+  #header,
+  #navigation,
+  #footer {
     display: none;
+  }
+
+  #content-container {
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   #content {
     width: 90%;
+  }
+
+  #aside {
+    padding: 0;
+    margin: 0 0 0 4%;
   }
 }
 
@@ -100,10 +113,13 @@ body {
   }
 
   #header {
+    padding: 10px;
     position: sticky;
     top: 0;
-    left: 0px;
-    right: 0px;
+  }
+
+  #header h1 {
+    font-size: 20px;
   }
 
   #navigation ul {
@@ -129,7 +145,7 @@ body {
   #aside {
     display: none;
   }
-  
+
   #footer {
     text-align: center;
   }
