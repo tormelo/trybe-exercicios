@@ -2,6 +2,11 @@ body {
   margin: 0;
 }
 
+#content-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 #container {
   margin: 0 auto;
   width: 100%;
@@ -63,9 +68,9 @@ body {
 }
 
 #aside {
-  width: 33%;
   padding: 20px 0;
   margin: 0 3% 0 0;
+
 }
 
 #aside h3 {
@@ -86,5 +91,46 @@ body {
 
   #content {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  #header {
+    position: sticky;
+    top: 0;
+    left: 0px;
+    right: 0px;
+  }
+
+  #navigation ul {
+    flex-direction: column;
+  }
+
+  #navigation li a {
+    border-right: none;
+    border-bottom: 1px solid #fff;
+    flex-grow: 1;
+  }
+
+  #content {
+    margin: auto;
+    align-items: center;
+    width: 80%;
+  }
+
+  #content img {
+    max-width: 80%;
+  }
+
+  #aside {
+    display: none;
+  }
+  
+  #footer {
+    text-align: center;
   }
 }
