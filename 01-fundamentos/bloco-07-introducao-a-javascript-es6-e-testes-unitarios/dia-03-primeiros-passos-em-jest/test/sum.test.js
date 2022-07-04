@@ -1,4 +1,4 @@
-const sum = require("../src/exercicio-01-sum");
+const sum = require("../src/sum");
 
 describe('1 - Função sum', () => {
   it('Para os argumentos 4 e 5 deve retornar 9', () => {
