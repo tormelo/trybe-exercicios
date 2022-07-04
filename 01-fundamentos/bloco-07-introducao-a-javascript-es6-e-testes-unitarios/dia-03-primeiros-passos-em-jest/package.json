@@ -1,0 +1,14 @@
+{
+  "name": "dia-03-primeiros-passos-em-jest",
+  "version": "1.0.0",
+  "description": "Você vai implementar vários testes em contextos diferentes a fim de consolidar a mecânica e também a forma de pensar em testes.",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.2"
+  }
+}
