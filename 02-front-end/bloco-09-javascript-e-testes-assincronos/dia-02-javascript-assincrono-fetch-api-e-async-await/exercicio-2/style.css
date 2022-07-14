@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#crypto-list {
+  list-style: none;
+  padding: 0;
+}
+
+#crypto-list li {
+  padding: 10px 0;
+}
+
+#crypto-list li:hover {
+  background-color: lightgray;
+}
