@@ -1,35 +1,24 @@
-const API_URL = 'https://api.coincap.io/v2/assets';
+const COINCAP_URL = 'https://api.coincap.io/v2/assets';
+const CURRENCY_URL = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.min.json';
 
 const fetchCryptos = async () => {
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch(COINCAP_URL);
     const body = await response.json();
-    return body.data;
+    const { data } = body;
+    return data;
   } catch (error) {
     throw error;
   }
 };
 
-const createElement = (type, text) => {
-  const element = document.createElement(type);
-  element.innerText = text;
-  return element;
-}
-
-const populateCryptoList = async () => {
+const fetchUsdToBrlRate = async () => {
   try {
-    const cryptoList = document.querySelector('#crypto-list');
-    const cryptos = await fetchCryptos();
-    cryptos
-      .filter(({ rank }) => rank <= 10)
-      .forEach(({ name, symbol, priceUsd }) => {
-        const [priceFixed] = priceUsd.match(/\d+(.\d\d?)?/);
-        const cryptoElement = createElement('li', `${name} (${symbol}): ${priceFixed}`);
-        cryptoList.appendChild(cryptoElement);
-      });
+    const response = await fetch(CURRENCY_URL);
+    const data = await response.json();
+    const { usd: { brl } } = data;
+    return brl;
   } catch (error) {
-    alert(error.message);
+    throw error;
   }
 };
-
-window.onload = () => populateCryptoList();
