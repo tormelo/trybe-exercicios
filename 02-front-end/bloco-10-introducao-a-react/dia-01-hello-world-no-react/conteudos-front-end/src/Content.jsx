@@ -26,15 +26,17 @@ const conteudos = [
 class Content extends Component {
   render() {
     return (
-      <ul>
-        {conteudos.map(({ conteudo, bloco, status }) => (
-          <li key={conteudo}>
-            <h2>O conteúdo é: {conteudo}</h2>
-            <p>Status: {status}</p>
-            <p>Bloco: {bloco}</p>
-          </li>
-        ))}
-      </ul>
+      <main>
+        <ul className="content-list">
+          {conteudos.map(({ conteudo, bloco, status }) => (
+            <li key={conteudo}>
+              <h2>O conteúdo é: {conteudo}</h2>
+              <p>Status: {status}</p>
+              <p>Bloco: {bloco}</p>
+            </li>
+          ))}
+        </ul>
+      </main>
     )
   }
 }
