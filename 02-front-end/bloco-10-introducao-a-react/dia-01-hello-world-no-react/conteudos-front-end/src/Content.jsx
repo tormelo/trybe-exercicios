@@ -27,11 +27,11 @@ class Content extends Component {
   render() {
     return (
       <ul>
-        {conteudos.map(({ conteudo, bloco, status }, index) => (
-          <li key={index}>
-            O conteúdo é: {conteudo}
-            Status: {status}
-            Bloco: {bloco}
+        {conteudos.map(({ conteudo, bloco, status }) => (
+          <li key={conteudo}>
+            <h2>O conteúdo é: {conteudo}</h2>
+            <p>Status: {status}</p>
+            <p>Bloco: {bloco}</p>
           </li>
         ))}
       </ul>
