@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokedex {
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  border: 1px solid lightgrey;
+  border-radius: 12px;
+  margin: 1rem;
+}
+
+.pokemon-info {
+  padding: 1rem;
+}
+
+.pokemon-info p {
+  text-align: center;
+}
