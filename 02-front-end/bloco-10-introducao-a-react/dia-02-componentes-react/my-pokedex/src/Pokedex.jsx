@@ -5,7 +5,7 @@ import pokemons from "./data";
 class Pokedex extends Component {
   render() {
     return (
-      <div>
+      <div className="pokedex">
         {pokemons.map((pokemon) => <Pokemon key={pokemon.id} info={pokemon} />)}
       </div>
     );

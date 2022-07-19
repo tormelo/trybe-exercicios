@@ -5,8 +5,8 @@ class Pokemon extends Component {
   render() {
     const { name, type, averageWeight: { value: weight, measurementUnit }, image } = this.props.info;
     return (
-      <div className="flex align-center">
-        <div>
+      <div className="pokemon">
+        <div className="pokemon-info">
           <p>{name}</p>
           <p>{type}</p>
           <p>Average weight: {weight} {measurementUnit}</p>
