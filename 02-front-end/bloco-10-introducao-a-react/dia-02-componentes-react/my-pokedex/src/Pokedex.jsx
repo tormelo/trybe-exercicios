@@ -6,7 +6,7 @@ class Pokedex extends Component {
   render() {
     return (
       <div>
-        {pokemons.map((pokemon) => <Pokemon key={pokemon.name} info={pokemon} />)}
+        {pokemons.map((pokemon) => <Pokemon key={pokemon.id} info={pokemon} />)}
       </div>
     );
   }
