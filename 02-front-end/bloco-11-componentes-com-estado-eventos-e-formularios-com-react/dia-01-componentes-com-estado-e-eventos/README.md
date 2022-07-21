@@ -1,16 +1,16 @@
 # Exercícios
 
-Hoje você vai incrementar a sua Pokedex utilizando State. 
+Hoje você vai incrementar a sua Pokedex utilizando estados e eventos. 
 
 ## 1
 
-- Altere a sua página para que, ao invés de exibir toda a lista de pokémons, ela exiba um pokémon por vez. Ao apertar um botão de Próximo pokémon, a página passa a exibir o próximo pokémon da lista, e depois o próximo, e assim sucessivamente. Ao se chegar ao último pokémon da lista, a pokedex deve voltar para o primeiro pokémon no apertar do botão. Dica: Lembre-se [disso](https://pt-br.reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous)!
+Altere a sua página para que, ao invés de exibir toda a lista de pokémons, ela exiba um pokémon por vez. Ao apertar um botão de Próximo pokémon, a página passa a exibir o próximo pokémon da lista, e depois o próximo, e assim sucessivamente. Ao se chegar ao último pokémon da lista, a pokedex deve voltar para o primeiro pokémon no apertar do botão. Dica: Lembre-se [disso](https://pt-br.reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous)!
 
-#### Exercício 2
+## 2
 
-- Sua pokedex deve ter dois botões contendo os tipos Fire e Psychic. A partir dessa seleção, a pokedex deve circular somente pelos pokémons daquele tipo. Quando a página carrega, um desses filtros deve estar selecionado.
+Sua pokedex deve ter dois botões contendo os tipos Fire e Psychic. A partir dessa seleção, a pokedex deve circular somente pelos pokémons daquele tipo. Quando a página carrega, um desses filtros deve estar selecionado.
 
-#### Bônus
+## Bônus
 
 Agora que você pegou todos os pokémons, consegue pegar todos os bônus?! Não é fácil completar todos! Faça quantos conseguir.
 
@@ -26,4 +26,4 @@ Agora que você pegou todos os pokémons, consegue pegar todos os bônus?! Não 
 
 Abaixo, um exemplo com todos os bônus feitos:
 
-![Pokedex finalizada](images/pokedex.gif)
+![Pokedex finalizada](./pokedex.gif)
