@@ -1,6 +1,6 @@
 import { Component } from "react";
 import Pokemon from "./Pokemon";
-import pokemons from "./data";
+import pokemons from "../data";
 
 class Pokedex extends Component {
   render() {

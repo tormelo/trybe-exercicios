@@ -13,6 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .pokedex {
@@ -33,8 +34,4 @@ body {
 
 .pokemon-info {
   padding: 1rem;
-}
-
-.pokemon-info p {
-  text-align: center;
 }
