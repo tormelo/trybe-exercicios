@@ -8,25 +8,41 @@ class Pokedex extends Component {
 
     this.state = {
       index: 0,
-      maxIndex: pokemons.length - 1
+      pkmnList: pokemons
     }
 
     this.moveIndex = this.moveIndex.bind(this);
+    this.filterList = this.filterList.bind(this);
   }
 
   moveIndex() {
-    this.setState(({ index: prevIndex, maxIndex }) => ({
-      index: prevIndex < maxIndex ? prevIndex + 1 : 0,
+    this.setState(({ index: prevIndex, pkmnList }) => ({
+      index: (prevIndex + 1) % pkmnList.length,
     }));
   }
 
+  filterList(filter) {
+    this.setState(() => {
+      const filteredList = filter ? pokemons.filter(({ type }) => type === filter) : pokemons;
+      return ({
+        index: 0,
+        pkmnList: filteredList
+      })
+    });
+  }
+
   render() {
-    const { index } = this.state;
-    const pokemon = pokemons[index];
+    const { index, pkmnList } = this.state;
+    const pokemon = pkmnList[index];
 
     return (
       <div className="pokedex">
         <Pokemon key={pokemon.id} info={pokemon} />
+        <div>
+          <button onClick={() => this.filterList('')}>All</button>
+          <button onClick={() => this.filterList('Fire')}>Fire</button>
+          <button onClick={() => this.filterList('Psychic')}>Psychic</button>
+        </div>
         <button onClick={this.moveIndex}>Próximo pokémon</button>
       </div>
 
