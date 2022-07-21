@@ -2,11 +2,11 @@
   box-sizing: border-box;
 }
 
-html,
+/* html,
 body {
   height: 100%;
   margin: 0;
-}
+} */
 
 #root {
   min-height: 100%;
@@ -18,8 +18,8 @@ body {
 
 .pokedex {
   max-width: 700px;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
 }
 
 .pokemon {
