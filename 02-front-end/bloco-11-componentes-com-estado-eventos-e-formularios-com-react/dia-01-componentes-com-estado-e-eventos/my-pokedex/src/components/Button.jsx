@@ -1,11 +1,11 @@
 import { Component } from "react";
-import { func } from 'prop-types'
+import { func, bool } from 'prop-types'
 
 class Button extends Component {
   render() {
-    const { children, handleClick } = this.props;
+    const { children, disabled, handleClick } = this.props;
     return (
-      <button onClick={handleClick}>
+      <button disabled={disabled} onClick={handleClick}>
         {children}
       </button>
     );
@@ -13,7 +13,12 @@ class Button extends Component {
 }
 
 Button.propTypes = {
-  handleClick: func
+  disabled: bool,
+  handleClick: func.isRequired
+}
+
+Button.defaultProps = {
+  disabled: false
 }
 
 export default Button;

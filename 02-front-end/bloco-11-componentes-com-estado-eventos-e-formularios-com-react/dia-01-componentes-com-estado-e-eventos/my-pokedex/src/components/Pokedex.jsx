@@ -44,7 +44,7 @@ class Pokedex extends Component {
       <div className="pokedex">
         <Pokemon key={pokemon.id} info={pokemon} />
         <div>{filterButtons}</div>
-        <Button handleClick={this.moveIndex}>Próximo pokémon</Button>
+        <Button disabled={pkmnList.length <= 1} handleClick={this.moveIndex}>Próximo pokémon</Button>
       </div>
 
     );
