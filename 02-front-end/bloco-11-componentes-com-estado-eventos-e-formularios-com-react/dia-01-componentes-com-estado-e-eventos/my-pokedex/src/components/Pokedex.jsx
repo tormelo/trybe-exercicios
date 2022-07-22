@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Pokemon from "./Pokemon";
 import pokemons from "../data";
+import Button from "./Button";
 
 class Pokedex extends Component {
   constructor() {
@@ -43,7 +44,7 @@ class Pokedex extends Component {
           <button onClick={() => this.filterList('Fire')}>Fire</button>
           <button onClick={() => this.filterList('Psychic')}>Psychic</button>
         </div>
-        <button onClick={this.moveIndex}>Próximo pokémon</button>
+        <Button handleClick={this.moveIndex}>Próximo pokémon</Button>
       </div>
 
     );
