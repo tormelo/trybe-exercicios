@@ -1,11 +1,11 @@
 import { Component } from "react";
-import { func, bool } from 'prop-types'
+import { bool, func, string } from 'prop-types'
 
 class Button extends Component {
   render() {
-    const { children, disabled, handleClick } = this.props;
+    const { children, className, disabled, handleClick } = this.props;
     return (
-      <button disabled={disabled} onClick={handleClick}>
+      <button className={className} disabled={disabled} onClick={handleClick}>
         {children}
       </button>
     );
@@ -13,6 +13,7 @@ class Button extends Component {
 }
 
 Button.propTypes = {
+  className: string.isRequired,
   disabled: bool,
   handleClick: func.isRequired
 }

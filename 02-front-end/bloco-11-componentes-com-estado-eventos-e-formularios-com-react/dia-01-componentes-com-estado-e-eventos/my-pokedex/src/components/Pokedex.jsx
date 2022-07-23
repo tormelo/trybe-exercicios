@@ -9,11 +9,11 @@ class Pokedex extends Component {
 
     this.state = {
       index: 0,
+      currentFilter: 'All',
       pkmnList: pokemons
     }
 
     this.moveIndex = this.moveIndex.bind(this);
-    this.filterList = this.filterList.bind(this);
   }
 
   moveIndex() {
@@ -26,25 +26,45 @@ class Pokedex extends Component {
     const filteredList = filter === 'All' ? pokemons : pokemons.filter(({ type }) => (type === filter));
     this.setState({
       index: 0,
+      currentFilter: filter,
       pkmnList: filteredList
     });
   }
 
+  getFilters() {
+    return (
+      pokemons.reduce((array, { type }) => (
+        array.includes(type) ? array : [...array, type]
+      ), ['All'])
+    );
+  }
+
+  createFilterButtons(filters) {
+    const { currentFilter } = this.state;
+    return (
+      filters.map((filter) => {
+        const buttonClass = currentFilter === filter ? `btn-filter selected` : 'btn-filter';
+        return (
+          <Button className={buttonClass} handleClick={() => this.filterList(filter)} key={filter} >
+            {filter}
+          </Button>);
+      })
+    );
+  }
+
   render() {
     const { index, pkmnList } = this.state;
+    const filters = this.getFilters();
+    const filterButtons = this.createFilterButtons(filters);
     const pokemon = pkmnList[index];
-    const filters = pokemons.reduce((array, { type }) => (
-      array.includes(type) ? array : [...array, type]
-    ), ['All']);
-    const filterButtons = filters.map((filter) => (
-      <Button key={filter} handleClick={() => this.filterList(filter)}>{filter}</Button>
-    ));
 
     return (
       <div className="pokedex">
-        <Pokemon key={pokemon.id} info={pokemon} />
         <div>{filterButtons}</div>
-        <Button disabled={pkmnList.length <= 1} handleClick={this.moveIndex}>Próximo pokémon</Button>
+        <Pokemon key={pokemon.id} info={pokemon} />
+        <Button className="btn-next" disabled={pkmnList.length <= 1} handleClick={this.moveIndex}>
+          Próximo pokémon
+        </Button>
       </div>
 
     );
