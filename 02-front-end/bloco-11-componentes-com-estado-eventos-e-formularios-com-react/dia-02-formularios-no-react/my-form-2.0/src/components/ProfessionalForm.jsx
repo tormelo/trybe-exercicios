@@ -4,7 +4,7 @@ import TextArea from './TextArea';
 
 class ProfessionalForm extends React.Component {
   render() {
-    const { currentState, handleChange, handleMouseEnter } = this.props;
+    const { currentState, handleChange, sendAlert } = this.props;
     const { resume, role, roleDescription } = currentState;
     return (
       <fieldset>
@@ -22,7 +22,7 @@ class ProfessionalForm extends React.Component {
           maxLength="40"
           value={role}
           onChange={handleChange}
-          onMouseEnter={handleMouseEnter}
+          onMouseEnter={sendAlert}
         />
         <TextArea
           label="Descrição do cargo"

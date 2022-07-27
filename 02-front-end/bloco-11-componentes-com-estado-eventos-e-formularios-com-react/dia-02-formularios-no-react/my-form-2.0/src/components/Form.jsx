@@ -1,21 +1,37 @@
 import React from 'react';
+import Button from './Button';
 import PersonalForm from './PersonalForm';
 import ProfessionalForm from './ProfessionalForm';
 
 class Form extends React.Component {
   render() {
-    const { currentState, handleChange, handleBlur, handleMouseEnter } = this.props;
+    const {
+      currentState,
+      handleChange,
+      onCityInputBlur,
+      sendAlert,
+      submitForm,
+      clearForm,
+    } = this.props;
+
     return (
-      <form>
+      <form onSubmit={submitForm}>
         <PersonalForm
           currentState={currentState}
           handleChange={handleChange}
-          handleBlur={handleBlur}
+          onCityInputBlur={onCityInputBlur}
         />
         <ProfessionalForm
           currentState={currentState}
           handleChange={handleChange}
-          handleMouseEnter={handleMouseEnter}
+          sendAlert={sendAlert}
+        />
+        <Button
+          label="Enviar"
+        />
+        <Button
+          label="Limpar"
+          onClick={clearForm}
         />
       </form>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './components/Form';
+import DataDisplay from './components/DataDisplay';
 import './App.css';
 
 const INITIAL_STATE = {
@@ -32,7 +33,7 @@ class App extends React.Component {
     if (key === 'cpf') value = this.validateCPF(value);
     if (key === 'address') value = this.validateAddress(value);
     newState[key] = value;
-    this.saveState(newState);
+    this.setState(newState);
   }
 
   isEmailInvalid = (email) => (
@@ -50,30 +51,40 @@ class App extends React.Component {
   onCityInputBlur = ({ target }) => {
     let { name: key, value } = target;
     value = value.match(/^\d+/) ? '' : value;
-    this.saveState({ [key]: value });
+    this.setState({ [key]: value });
   }
 
   sendAlert = () => {
     const { alerted } = this.state;
     if (!alerted) {
       alert('Preencha com cuidado esta informação.')
-      this.saveState({ alerted: true });
+      this.setState({ alerted: true });
     };
   }
 
-  saveState = (newState) => {
-    this.setState(newState);
+  submitForm = (event) => {
+    event.preventDefault();
+    this.setState({ submitted: true });
+  }
+
+  clearForm = (event) => {
+    event.preventDefault();
+    this.setState(INITIAL_STATE);
   }
 
   render() {
+    const { submitted } = this.state;
     return (
       <div className="App">
         <Form
           currentState={this.state}
           handleChange={this.handleChange}
-          handleBlur={this.onCityInputBlur}
-          handleMouseEnter={this.sendAlert}
+          onCityInputBlur={this.onCityInputBlur}
+          sendAlert={this.sendAlert}
+          submitForm={this.submitForm}
+          clearForm={this.clearForm}
         />
+        {submitted && <DataDisplay currentState={this.state}/>}
       </div>
     );
   }

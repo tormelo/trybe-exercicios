@@ -5,7 +5,7 @@ import Input from './Input';
 
 class PersonalForm extends React.Component {
   render() {
-    const { currentState, handleChange, handleBlur } = this.props;
+    const { currentState, handleChange, onCityInputBlur } = this.props;
     const { name, email, cpf, address, city, countryState, invalidEmail } = currentState;
     return (
       <fieldset>
@@ -45,7 +45,7 @@ class PersonalForm extends React.Component {
           maxLength="28"
           value={city}
           onChange={handleChange}
-          onBlur={handleBlur}
+          onBlur={onCityInputBlur}
         />
         <CountryStateSelect
           value={countryState}

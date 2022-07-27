@@ -5,7 +5,7 @@ class CountryStateSelect extends React.Component {
   render() {
     const { value, onChange } = this.props;
     const options = states.map((state) => (
-      <option key={state} value={state.toLowerCase()}>{state}</option>
+      <option key={state} value={state}>{state}</option>
     ));
 
     return (
@@ -18,6 +18,7 @@ class CountryStateSelect extends React.Component {
           id="countryState"
           value={value}
           onChange={onChange}
+          required
         >
           {options}
         </select>
