@@ -1,4 +1,5 @@
 import React from 'react';
+import AddressType from './AddressType';
 import CountryStateSelect from './CountryStateSelect';
 import Input from './Input';
 
@@ -18,6 +19,9 @@ class PersonalForm extends React.Component {
         />
         <CountryStateSelect
           value={countryState}
+          onChange={handleChange}
+        />
+        <AddressType
           onChange={handleChange}
         />
       </fieldset>

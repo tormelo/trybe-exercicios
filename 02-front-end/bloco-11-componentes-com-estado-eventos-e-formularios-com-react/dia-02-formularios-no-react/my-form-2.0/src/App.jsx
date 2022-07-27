@@ -21,10 +21,14 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = INITIAL_STATE;
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange() {
-
+  handleChange({ target }) {
+    const { name, value } = target;
+    this.setState({
+      [name]: value,
+    });
   }
 
   render() {
