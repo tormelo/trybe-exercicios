@@ -13,6 +13,7 @@ const INITIAL_STATE = {
   addressType: '',
   resume: '',
   role: '',
+  alerted: false,
   roleDescription: '',
   submitted: false,
 }
@@ -21,40 +22,46 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = INITIAL_STATE;
-    this.handleChange = this.handleChange.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
   }
 
-  handleChange({ target }) {
-    let { name, value } = target;
+  handleChange = ({ target }) => {
+    let { name: key, value } = target;
     const newState = {};
-    if (name === 'name') value = value.toUpperCase();
-    if (name === 'email') newState.invalidEmail = this.isEmailInvalid(value);
-    if (name === 'cpf') value = this.validateCPF(value);
-    if (name === 'address') value = this.validateAddress(value);
-    newState[name] = value;
+    if (key === 'name') value = value.toUpperCase();
+    if (key === 'email') newState.invalidEmail = this.isEmailInvalid(value);
+    if (key === 'cpf') value = this.validateCPF(value);
+    if (key === 'address') value = this.validateAddress(value);
+    newState[key] = value;
     this.saveState(newState);
   }
 
-  handleBlur({ target }) {
-    let { name, value } = target;
+  isEmailInvalid = (email) => (
+    email.match(/^([\w.-]+)(@[\w-]+)([.][\w]+)$/i) ? false : true
+  )
+
+  validateCPF = (cpf) => (
+    cpf.replace(/[^\d]/g, '')
+  )
+
+  validateAddress = (address) => (
+    address.replace(/[^\p{L}\d\s.,´`^~]/ug, '')
+  )
+
+  onCityInputBlur = ({ target }) => {
+    let { name: key, value } = target;
     value = value.match(/^\d+/) ? '' : value;
-    this.saveState({ [name]: value });
+    this.saveState({ [key]: value });
   }
 
-  isEmailInvalid(email) {
-    return email.match(/^([\w.-]+)(@[\w-]+)([.][\w]+)$/i) ? false : true;
+  sendAlert = () => {
+    const { alerted } = this.state;
+    if (!alerted) {
+      alert('Preencha com cuidado esta informação.')
+      this.saveState({ alerted: true });
+    };
   }
 
-  validateCPF(cpf) {
-    return cpf.replace(/[^\d]/g, '');
-  }
-
-  validateAddress(address) {
-    return address.replace(/[^\p{L}\d\s.,´`^~]/ug, '');
-  }
-
-  saveState(newState) {
+  saveState = (newState) => {
     this.setState(newState);
   }
 
@@ -64,7 +71,8 @@ class App extends React.Component {
         <Form
           currentState={this.state}
           handleChange={this.handleChange}
-          handleBlur={this.handleBlur}
+          handleBlur={this.onCityInputBlur}
+          handleMouseEnter={this.sendAlert}
         />
       </div>
     );

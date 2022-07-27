@@ -3,7 +3,7 @@ import React from 'react';
 
 class Input extends React.Component {
   render() {
-    const { label, id, maxLength, value, onChange, onBlur } = this.props;
+    const { label, id, maxLength, value, onChange, onBlur, onMouseEnter } = this.props;
     return (
       <div>
         <label htmlFor={id}>{label}</label>
@@ -15,6 +15,7 @@ class Input extends React.Component {
           value={value}
           onChange={onChange}
           onBlur={onBlur}
+          onMouseEnter={onMouseEnter}
           required
         />
       </div>

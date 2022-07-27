@@ -4,7 +4,7 @@ import ProfessionalForm from './ProfessionalForm';
 
 class Form extends React.Component {
   render() {
-    const { currentState, handleChange, handleBlur } = this.props;
+    const { currentState, handleChange, handleBlur, handleMouseEnter } = this.props;
     return (
       <form>
         <PersonalForm
@@ -12,7 +12,11 @@ class Form extends React.Component {
           handleChange={handleChange}
           handleBlur={handleBlur}
         />
-        <ProfessionalForm />
+        <ProfessionalForm
+          currentState={currentState}
+          handleChange={handleChange}
+          handleMouseEnter={handleMouseEnter}
+        />
       </form>
     );
   }
