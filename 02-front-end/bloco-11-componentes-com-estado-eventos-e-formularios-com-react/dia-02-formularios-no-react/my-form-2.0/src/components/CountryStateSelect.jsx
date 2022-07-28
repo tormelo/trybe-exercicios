@@ -9,9 +9,9 @@ class CountryStateSelect extends React.Component {
     ));
 
     return (
-      <div>
+      <div className='input-container'>
         <label htmlFor="countryState">
-          Selecione seu estado:
+          Selecione seu estado
         </label>
         <select
           name="countryState"

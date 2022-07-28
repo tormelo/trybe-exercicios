@@ -15,7 +15,7 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <form onSubmit={submitForm}>
+      <form className='form' onSubmit={submitForm}>
         <PersonalForm
           currentState={currentState}
           handleChange={handleChange}
@@ -26,13 +26,17 @@ class Form extends React.Component {
           handleChange={handleChange}
           sendAlert={sendAlert}
         />
-        <Button
-          label="Enviar"
-        />
-        <Button
-          label="Limpar"
-          onClick={clearForm}
-        />
+        <div className='button-container'>
+          <Button
+            label="Enviar"
+            className="send button"
+          />
+          <Button
+            label="Limpar"
+            className="clear button"
+            onClick={clearForm}
+          />
+        </div>
       </form>
     );
   }

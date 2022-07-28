@@ -1,11 +1,10 @@
 import React from 'react';
-// import { func, string } from 'prop-types';
 
 class Input extends React.Component {
   render() {
     const { label, id, maxLength, value, onChange, onBlur, onMouseEnter } = this.props;
     return (
-      <div>
+      <div className='input-container'>
         <label htmlFor={id}>{label}</label>
         <input
           type="text"
@@ -22,18 +21,5 @@ class Input extends React.Component {
     );
   }
 }
-
-// Input.propTypes = {
-//   label: string.isRequired,
-//   id: string.isRequired,
-//   value: string.isRequired,
-//   maxLength: string.isRequired,
-//   onChange: func.isRequired,
-//   onBlur: func,
-// }
-
-// Input.defaultProps = {
-//   onBlur: undefined,
-// }
 
 export default Input;

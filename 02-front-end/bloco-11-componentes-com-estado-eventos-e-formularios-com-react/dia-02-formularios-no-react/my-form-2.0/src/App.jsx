@@ -84,7 +84,7 @@ class App extends React.Component {
           submitForm={this.submitForm}
           clearForm={this.clearForm}
         />
-        {submitted && <DataDisplay currentState={this.state}/>}
+        {submitted && <DataDisplay currentState={this.state} />}
       </div>
     );
   }
